@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Adobo Recipe - Genz Recipe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .recipe-page {
+            padding: 6rem 2rem 4rem;
+            background: linear-gradient(135deg, #FFF8F0 0%, #F5EBD9 100%);
+            min-height: 100vh;
+        }
+        .recipe-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .recipe-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .recipe-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #E8581C;
+            margin-bottom: 1rem;
+        }
+        .recipe-meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            color: #4A4A4A;
+        }
+        .recipe-image-main {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        .recipe-section {
+            margin: 2.5rem 0;
+        }
+        .recipe-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #2B2B2B;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid #E8581C;
+            padding-left: 1rem;
+        }
+        .ingredients-list {
+            list-style: none;
+            padding: 0;
+        }
+        .ingredients-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 1.1rem;
+            color: #4A4A4A;
+        }
+        .ingredients-list li:before {
+            content: "✓ ";
+            color: #E8581C;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        .instructions-list {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+        .instructions-list li {
+            counter-increment: step-counter;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: #FFF8F0;
+            border-radius: 10px;
+            border-left: 4px solid #E8581C;
+            position: relative;
+        }
+        .instructions-list li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #E8581C;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .tips-box {
+            background: #FFF8F0;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px dashed #E8581C;
+            margin: 2rem 0;
+        }
+        .tips-box h3 {
+            color: #E8581C;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .tips-box p {
+            color: #4A4A4A;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+        .go-back-btn {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 0.8rem 1.5rem;
+            background-color: #E8581C;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .go-back-btn:hover {
+            background-color: #c44a16;
+        }        
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">🍜</div>
+                <span class="logo-text">Genz Recipe</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="main.html" class="nav-link">Recipes</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Recipe Content -->
+    <div class="recipe-page">
+        <div class="recipe-container">
+            <a href="#" onclick="goBack()" class="go-back-btn">← Go Back to Recipes</a>
+            <div class="recipe-header">
+                <h1>Chicken Adobo</h1>
+                <p style="font-size: 1.2rem; color: #666;">The unofficial national dish of the Philippines</p>
+                <div class="recipe-meta-info">
+                    <div class="meta-item">⏱️ Prep: 10 mins</div>
+                    <div class="meta-item">🔥 Cook: 35 mins</div>
+                    <div class="meta-item">🍽️ Serves: 6</div>
+                    <div class="meta-item">⭐ Difficulty: Easy</div>
+                </div>
+            </div>
+
+            <img src="chicken-adobo.jpg" alt="Chicken Adobo" class="recipe-image-main">
+
+            <div class="recipe-section">
+                <h2>Ingredients</h2>
+                <ul class="ingredients-list">
+                    <li>2 lbs (900g) chicken pieces (thighs and drumsticks work best)</li>
+                    <li>1/2 cup soy sauce</li>
+                    <li>1/2 cup white vinegar</li>
+                    <li>1 cup water</li>
+                    <li>8 cloves garlic, crushed</li>
+                    <li>3 bay leaves (laurel)</li>
+                    <li>1 tablespoon whole black peppercorns</li>
+                    <li>2 tablespoons cooking oil</li>
+                    <li>1 tablespoon brown sugar (optional)</li>
+                    <li>Salt to taste</li>
+                    <li>Green onions for garnish (optional)</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section">
+                <h2>Instructions</h2>
+                <ol class="instructions-list">
+                    <li>In a large bowl, combine chicken, soy sauce, vinegar, garlic, bay leaves, and peppercorns. Marinate for at least 30 minutes (or overnight in the refrigerator for best flavor).</li>
+                    <li>Heat oil in a large pot or deep pan over medium-high heat.</li>
+                    <li>Remove chicken from marinade (reserve the marinade!) and brown the chicken pieces on all sides, about 3-4 minutes per side. Work in batches if needed.</li>
+                    <li>Once browned, pour the reserved marinade into the pot along with 1 cup of water.</li>
+                    <li>Bring to a boil, then reduce heat to low. Cover and simmer for 30-40 minutes, or until chicken is tender and cooked through.</li>
+                    <li>Remove the lid and continue cooking for 10-15 minutes to reduce the sauce to your desired thickness.</li>
+                    <li>Taste and adjust seasoning. Add brown sugar if you prefer a slightly sweeter adobo, or more soy sauce for saltiness.</li>
+                    <li>Remove bay leaves before serving.</li>
+                    <li>Serve hot over steamed white rice and garnish with green onions if desired.</li>
+                    <li>Pour the delicious adobo sauce over the rice - that's the best part!</li>
+                </ol>
+            </div>
+
+            <div class="tips-box">
+                <h3>💡 Cooking Tips</h3>
+                <p>• The key to great adobo is balancing the soy sauce and vinegar. Adjust to your taste preference.</p>
+                <p>• Don't stir immediately after adding vinegar - let it boil first to cook off the harsh acidity.</p>
+                <p>• Adobo tastes even better the next day when reheated, as the flavors deepen.</p>
+                <p>• For a richer version, add hard-boiled eggs in the last 10 minutes of cooking.</p>
+                <p>• Some regions add coconut milk for "Adobo sa Gata" - add 1 cup near the end of cooking.</p>
+                <p>• You can substitute chicken with pork, or use a combination of both!</p>
+                <p>• For crispy adobo, fry the cooked chicken pieces in oil after simmering.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-developer">Developed by Kevin William C. Dela Vega</p>
+            <div class="footer-contact">
+                <a href="mailto:kdelavega55@gmail.com" class="footer-link">Email: kdelavega55@gmail.com</a>
+                <span class="footer-divider">|</span>
+                <a href="tel:09636020402" class="footer-link">Phone: 09636020402</a>
+                <span class="footer-divider">|</span>
+                <a href="#" class="footer-link">Facebook</a>
+                <span class="footer-divider">|</span>
+                <a href="#" class="footer-link">Instagram</a>
+            </div>
+        </div>
+    </footer>
+ <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

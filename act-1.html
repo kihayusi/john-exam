@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pancit Bihon Recipe - Genz Recipe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .recipe-page {
+            padding: 6rem 2rem 4rem;
+            background: linear-gradient(135deg, #FFF8F0 0%, #F5EBD9 100%);
+            min-height: 100vh;
+        }
+        .recipe-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .recipe-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .recipe-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #E8581C;
+            margin-bottom: 1rem;
+        }
+        .recipe-meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            color: #4A4A4A;
+        }
+        .recipe-image-main {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        .recipe-section {
+            margin: 2.5rem 0;
+        }
+        .recipe-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #2B2B2B;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid #E8581C;
+            padding-left: 1rem;
+        }
+        .ingredients-list {
+            list-style: none;
+            padding: 0;
+        }
+        .ingredients-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 1.1rem;
+            color: #4A4A4A;
+        }
+        .ingredients-list li:before {
+            content: "✓ ";
+            color: #E8581C;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        .instructions-list {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+        .instructions-list li {
+            counter-increment: step-counter;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: #FFF8F0;
+            border-radius: 10px;
+            border-left: 4px solid #E8581C;
+            position: relative;
+        }
+        .instructions-list li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #E8581C;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .tips-box {
+            background: #FFF8F0;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px dashed #E8581C;
+            margin: 2rem 0;
+        }
+        .tips-box h3 {
+            color: #E8581C;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .tips-box p {
+            color: #4A4A4A;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+        .go-back-btn {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 0.8rem 1.5rem;
+            background-color: #E8581C;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .go-back-btn:hover {
+            background-color: #c44a16;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">🍜</div>
+                <span class="logo-text">Genz Recipe</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="main.html" class="nav-link">Recipes</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Recipe Content -->
+    <div class="recipe-page">
+        <div class="recipe-container">
+            <a href="#" onclick="goBack()" class="go-back-btn">← Go Back to Recipes</a>
+            <div class="recipe-header">
+                <h1>Pancit Bihon</h1>
+                <p style="font-size: 1.2rem; color: #666;">Classic Filipino stir-fried rice noodles</p>
+                <div class="recipe-meta-info">
+                    <div class="meta-item">⏱️ Prep: 15 mins</div>
+                    <div class="meta-item">🔥 Cook: 15 mins</div>
+                    <div class="meta-item">🍽️ Serves: 6</div>
+                    <div class="meta-item">⭐ Difficulty: Easy</div>
+                </div>
+            </div>
+
+            <img src="pancitbihon.jpg" alt="Pancit Bihon" class="recipe-image-main">
+
+            <div class="recipe-section">
+                <h2>Ingredients</h2>
+                <ul class="ingredients-list">
+                    <li>1 lb (450g) bihon rice noodles</li>
+                    <li>1/2 lb (225g) chicken breast, sliced thinly</li>
+                    <li>1/4 lb (115g) pork, sliced thinly</li>
+                    <li>8 pieces medium shrimp, peeled and deveined</li>
+                    <li>2 tablespoons cooking oil</li>
+                    <li>4 cloves garlic, minced</li>
+                    <li>1 medium onion, sliced</li>
+                    <li>2 cups chicken broth</li>
+                    <li>3 tablespoons soy sauce</li>
+                    <li>1 tablespoon oyster sauce</li>
+                    <li>1 medium carrot, julienned</li>
+                    <li>1 cup cabbage, shredded</li>
+                    <li>1/2 cup green beans, cut into 2-inch pieces</li>
+                    <li>Salt and pepper to taste</li>
+                    <li>Calamansi or lemon wedges for serving</li>
+                    <li>Green onions for garnish</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section">
+                <h2>Instructions</h2>
+                <ol class="instructions-list">
+                    <li>Soak the bihon noodles in water for 10 minutes, then drain and set aside.</li>
+                    <li>Heat oil in a large wok or pan over medium-high heat. Sauté garlic and onion until fragrant.</li>
+                    <li>Add the pork and chicken. Cook until the meat is no longer pink, about 5-7 minutes.</li>
+                    <li>Add the shrimp and cook until they turn pink, about 2-3 minutes.</li>
+                    <li>Pour in the chicken broth, soy sauce, and oyster sauce. Bring to a boil.</li>
+                    <li>Add the carrots and green beans. Cook for 2 minutes.</li>
+                    <li>Add the soaked bihon noodles. Toss everything together, making sure the noodles absorb the liquid.</li>
+                    <li>Add the cabbage and mix well. Cook for another 2-3 minutes until the noodles are tender and the vegetables are cooked but still crisp.</li>
+                    <li>Season with salt and pepper to taste.</li>
+                    <li>Transfer to a serving platter and garnish with green onions. Serve with calamansi or lemon wedges.</li>
+                </ol>
+            </div>
+
+            <div class="tips-box">
+                <h3>💡 Cooking Tips</h3>
+                <p>• Don't oversoak the noodles - they should still be firm as they'll cook further in the pan.</p>
+                <p>• Use high heat when stir-frying to get that authentic "wok hei" flavor.</p>
+                <p>• You can add other vegetables like sayote (chayote), bell peppers, or snow peas.</p>
+                <p>• For a richer flavor, you can add a tablespoon of annatto oil (atsuete).</p>
+                <p>• Pancit tastes even better the next day when the flavors have melded together!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-developer">Developed by Kevin William C. Dela Vega</p>
+            <div class="footer-contact">
+                <a href="mailto:kdelavega55@gmail.com" class="footer-link">Email: kdelavega55@gmail.com</a>
+                <span class="footer-divider">|</span>
+                <a href="tel:09636020402" class="footer-link">Phone: 09636020402</a>
+                <span class="footer-divider">|</span>
+                <a href="#" class="footer-link">Facebook</a>
+                <span class="footer-divider">|</span>
+                <a href="#" class="footer-link">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
